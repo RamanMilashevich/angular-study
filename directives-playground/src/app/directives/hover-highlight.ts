@@ -8,7 +8,7 @@ export class HoverHighlightDirective {
   @Input('appHoverHighlight') hoverColor = 'plum';
 
   @HostBinding('style.backgroundColor')
-  background = '';
+  background = ' ';
 
   @HostListener('mouseenter')
   onMouseEnter(): void {
