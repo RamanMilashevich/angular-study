@@ -71,3 +71,8 @@ h2 {
 .tip {
   margin-top: 0.5rem;
 }
+
+.tip.alt {
+  border-color: rgba(248, 113, 113, 0.5);
+  background: rgba(248, 113, 113, 0.12);
+}
