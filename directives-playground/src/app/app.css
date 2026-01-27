@@ -17,6 +17,11 @@ h1 {
   font-size: 2.25rem;
 }
 
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
 .hint {
   margin: 0 0 2rem;
   color: #94a3b8;
@@ -26,6 +31,10 @@ h1 {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.section {
+  margin-top: 3rem;
 }
 
 .card {
@@ -40,4 +49,25 @@ h1 {
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+}
+
+.btn {
+  margin-bottom: 1.5rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.4);
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(56, 189, 248, 0.9);
+}
+
+.tip {
+  margin-top: 0.5rem;
 }

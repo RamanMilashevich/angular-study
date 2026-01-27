@@ -31,4 +31,18 @@
       Declarative glow — orange custom
     </article>
   </section>
+
+  <section class="section">
+    <h2>Structural Directive: appIf</h2>
+    <p class="hint">Click the button to toggle the block below.</p>
+
+    <button class="btn" type="button" (click)="toggleTip()">
+      Toggle Tip (currently {{ showTip() ? 'visible' : 'hidden' }})
+    </button>
+
+    <div class="card tip" *appIf="showTip()">
+      This block is controlled by <strong>*appIf</strong>.
+      It renders only when the condition is true.
+    </div>
+  </section>
 </main>
