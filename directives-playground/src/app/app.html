@@ -1,18 +1,26 @@
 <main class="page">
   <h1>Directives Playground</h1>
-  <p class="hint">Hover the boxes to see the attribute directive in action.</p>
+  <p class="hint">Hover the boxes to see the attribute directives in action.</p>
 
   <section class="grid">
     <article class="card" appHighlight>
-      Default highlight (gold)
+      Imperative (Renderer2) — default gold
     </article>
 
     <article class="card" [appHighlight]="'lightskyblue'">
-      Custom highlight (lightskyblue)
+      Imperative (Renderer2) — custom color
     </article>
 
     <article class="card" [appHighlight]="favoriteColor()">
-      Highlight from a signal ({{ favoriteColor() }})
+      Imperative (Renderer2) — signal ({{ favoriteColor() }})
+    </article>
+
+    <article class="card" appHoverHighlight>
+      Declarative (@HostBinding) — default plum
+    </article>
+
+    <article class="card" [appHoverHighlight]="'lightcoral'">
+      Declarative (@HostBinding) — custom color
     </article>
   </section>
 </main>

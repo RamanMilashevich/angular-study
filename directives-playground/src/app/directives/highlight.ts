@@ -1,11 +1,16 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]',
   standalone: true,
+  // host: {
+  //   '[style.color]' : 'signalColor()',
+  //   '[class.someClass]': 'isActive()'
+  // }
 })
 export class HighlightDirective {
-  @Input('appHighlight') highlightColor = 'gold';
+ @Input('appHighlight') highlightColor = 'gold';
+   
 
   private readonly defaultBackground = '';
 
@@ -23,6 +28,9 @@ export class HighlightDirective {
   onMouseLeave(): void {
     this.setBackground(this.defaultBackground);
   }
+
+  
+
 
   private setBackground(color: string): void {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
