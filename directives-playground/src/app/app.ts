@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { AppIfDirective } from './directives/app-if';
+import { AppUnlessDirective } from './directives/app-unless';
 import { HighlightDirective } from './directives/highlight';
 import { HoverGlowDirective } from './directives/hover-glow';
 import { HoverHighlightDirective } from './directives/hover-highlight';
 
 @Component({
   selector: 'app-root',
-  imports: [AppIfDirective, HighlightDirective, HoverGlowDirective, HoverHighlightDirective],
+  imports: [AppIfDirective, AppUnlessDirective, HighlightDirective, HoverGlowDirective, HoverHighlightDirective],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
