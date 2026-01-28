@@ -62,4 +62,20 @@
       It renders only when the condition is false.
     </div>
   </section>
+
+  <section class="section">
+    <h2>Output Directive: appClickLog</h2>
+    <p class="hint">Click the button to emit a custom event from the directive.</p>
+
+    <button
+      class="btn"
+      type="button"
+      [appClickLog]="getClickLabel()"
+      (appClickLogEvent)="onLoggedClick($event)"
+    >
+      Click to Emit
+    </button>
+
+    <p class="hint">Last event: {{ lastClickMessage() }}</p>
+  </section>
 </main>
