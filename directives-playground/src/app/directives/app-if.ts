@@ -11,8 +11,8 @@ export class AppIfDirective {
   private currentView: AppIfView = null;
 
   constructor(
-    private readonly templateRef: TemplateRef<unknown>,
-    private readonly viewContainer: ViewContainerRef,
+    private readonly templateRef: TemplateRef<unknown>, // the blueprint of the element the directive is applied to
+    private readonly viewContainer: ViewContainerRef, // where we put our refrerence
   ) {}
 
   @Input()

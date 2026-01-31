@@ -1,0 +1,56 @@
+<main class="page">
+  <h1>Signals Playground</h1>
+  <p class="lead">Small interactive examples to practice Angular signals.</p>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Counter signal</h2>
+      <p class="value">Count: <strong>{{ count() }}</strong></p>
+      <div class="controls">
+        <button class="btn" type="button" (click)="decrement()">-</button>
+        <button class="btn" type="button" (click)="increment()">+</button>
+        <button class="btn ghost" type="button" (click)="reset()">Reset</button>
+      </div>
+      <label class="field">
+        Step
+        <input type="number" [value]="step()" (input)="updateStep($event)" />
+      </label>
+    </article>
+
+    <article class="card">
+      <h2>Derived signals</h2>
+      <p>Double: <strong>{{ doubleCount() }}</strong></p>
+      <p>Even: <span class="chip">{{ isEven() ? 'Yes' : 'No' }}</span></p>
+      <p class="hint">Derived values update automatically when <code>count</code> changes.</p>
+    </article>
+
+    <article class="card">
+      <h2>Effect log</h2>
+      <p class="hint">An effect reacts to <code>count</code> and records a message.</p>
+      <p class="value">Last update: <strong>{{ lastUpdate() }}</strong></p>
+      <p class="log">{{ lastAction() }}</p>
+    </article>
+  </section>
+
+  <section class="card message">
+    <h2>Signal + input</h2>
+    <p class="hint">Type a name to update a signal without forms.</p>
+    <input
+      type="text"
+      class="text"
+      [value]="name()"
+      (input)="updateName($event)"
+      placeholder="Type a name"
+    />
+    <p class="preview">Hello, <strong>{{ name() }}</strong>!</p>
+    <signal-badge
+      [label]="name()"
+      [color]="isEven() ? '#38bdf8' : '#f97316'"
+    ></signal-badge>
+  </section>
+
+  <section class="card examples">
+    <h2>Signals in practice</h2>
+    <signal-examples></signal-examples>
+  </section>
+</main>

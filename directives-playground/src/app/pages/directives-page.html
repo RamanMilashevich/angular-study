@@ -1,0 +1,90 @@
+<main class="page">
+  <h1>Directives Playground</h1>
+  <p class="hint">Hover the boxes to see the attribute directives in action.</p>
+
+  <section class="grid">
+    <article class="card" appHighlight>
+      Imperative (Renderer2) — default gold
+    </article>
+
+    <article class="card" [appHighlight]="'lightskyblue'">
+      Imperative (Renderer2) — custom color
+    </article>
+
+    <article class="card" [appHighlight]="favoriteColor()">
+      Imperative (Renderer2) — signal ({{ favoriteColor() }})
+    </article>
+
+    <article class="card" appHoverHighlight>
+      Declarative (@HostBinding) — default plum
+    </article>
+
+    <article class="card" [appHoverHighlight]="'lightcoral'">
+      Declarative (@HostBinding) — custom color
+    </article>
+
+    <article class="card" appHoverGlow>
+      Declarative glow — default sky
+    </article>
+
+    <article class="card" [appHoverGlow]="'0 0 14px #f97316'">
+      Declarative glow — orange custom
+    </article>
+  </section>
+
+  <section class="section">
+    <h2>Structural Directive: appIf</h2>
+    <p class="hint">Click the button to toggle the block below.</p>
+
+    <button class="btn" type="button" (click)="toggleTip()">
+      Toggle Tip (currently {{ showTip() ? 'visible' : 'hidden' }})
+    </button>
+
+    <!-- Structural directive example: *appIf -->
+    <div class="card tip" *appIf="showTip(); else hiddenTip">
+      This block is controlled by <strong>*appIf</strong>.
+      It renders only when the condition is true.
+    </div>
+
+    <!-- How Angular converts it, in case *appIf="showTip(); else hiddenTip"-
+          is unclear: -->
+    <!-- <ng-template [appIf]="showTip()" [appIfElse]="hiddenTip">
+          <div>...</div>
+        </ng-template> -->
+
+    <!-- Structural directive helper template (else block) -->
+    <ng-template #hiddenTip>
+      <div class="card tip alt">
+        This is the <strong>else</strong> block for <strong>*appIf</strong>.
+        It renders when the condition is false.
+      </div>
+    </ng-template>
+  </section>
+
+  <section class="section">
+    <h2>Structural Directive: appUnless</h2>
+    <p class="hint">This block appears only when the condition is false.</p>
+
+    <!-- Structural directive example: *appUnless -->
+    <div class="card tip" *appUnless="showTip()">
+      This block is controlled by <strong>*appUnless</strong>.
+      It renders only when the condition is false.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Output Directive: appClickLog</h2>
+    <p class="hint">Click the button to emit a custom event from the directive.</p>
+
+    <button
+      class="btn"
+      type="button"
+      [appClickLog]="getClickLabel()"
+      (appClickLogEvent)="onLoggedClick($event)"
+    >
+      Click to Emit
+    </button>
+
+    <p class="hint">Last event: {{ lastClickMessage() }}</p>
+  </section>
+</main>
