@@ -1,0 +1,23 @@
+.detail {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hint {
+  color: #94a3b8;
+}
+
+.id {
+  margin: 0;
+}
+
+.back {
+  display: inline-flex;
+  width: fit-content;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}

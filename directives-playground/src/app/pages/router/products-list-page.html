@@ -1,0 +1,17 @@
+<section class="list">
+  <header class="list-header">
+    <div>
+      <h2>Products</h2>
+      <p class="hint">Click a product to navigate to /router/products/:id.</p>
+    </div>
+    <button class="chip" type="button" (click)="goToFirst()">Go to first</button>
+  </header>
+
+  <ul>
+    <li *ngFor="let product of products">
+      <a [routerLink]="['/router/products', product.id]">
+        {{ product.name }} — ${{ product.price }}
+      </a>
+    </li>
+  </ul>
+</section>

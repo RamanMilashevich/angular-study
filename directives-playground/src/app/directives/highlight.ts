@@ -29,8 +29,6 @@ export class HighlightDirective {
     this.setBackground(this.defaultBackground);
   }
 
-  
-
 
   private setBackground(color: string): void {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);

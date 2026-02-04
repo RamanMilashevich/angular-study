@@ -1,0 +1,29 @@
+<section class="router-page">
+  <header class="router-header">
+    <div>
+      <h1>Router Practice</h1>
+      <p class="hint">Practice RouterOutlet, navigation, and route params.</p>
+    </div>
+    <div class="meta">
+      <p class="label">Active component: <strong>{{ activeComponent() }}</strong></p>
+      <p class="label">Current URL: <strong>{{ currentUrl() }}</strong></p>
+    </div>
+  </header>
+
+  <nav class="subnav">
+    <a routerLink="/router" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Products
+    </a>
+    <a routerLink="/router/products/101" routerLinkActive="active">Product 101</a>
+  </nav>
+
+  <div class="subnav">
+    <button class="chip" type="button" (click)="goToList()">Go to list</button>
+    <button class="chip" type="button" (click)="goToProduct(102)">Go to product 102</button>
+    <button class="chip" type="button" (click)="goToProduct(103)">Go to product 103</button>
+  </div>
+
+  <div class="outlet" >
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+<section class="detail">
+  <h2>Product details</h2>
+  <p class="hint">Route param id comes from /router/products/:id.</p>
+
+  <p *ngIf="productId$ | async as id" class="id">
+    Current product id: <strong>{{ id }}</strong>
+  </p>
+
+  <a class="back" routerLink="/router">Back to list</a>
+</section>
